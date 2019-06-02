@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="contianer">
+      <div class="row">
+        <div class="col-sm">
+          <% if @album.errors%>
+            <% @album.errors.full_messages.each do |message|  %>
+              <p><%= message %></p>
+            <% end %>
+          <% end %>
+          <h1>New Album</h1>
+    <%= form_for @album do |f| %>
+    <h3> <%= f.label :name %></h3> 
+      <%= f.text_field :name %>
+      <%= f.submit  %>
+    <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
