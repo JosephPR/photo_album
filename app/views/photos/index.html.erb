@@ -11,7 +11,7 @@
       <h1>All Photo's</h1>
       <% @photos.each do |photo| %>
         <%= photo.name %>
-        <%= image_tag photo.image_url %>
+        <%= image_tag photo.image_url, :class => 'img-fluid' %>
           <hr>
       <% end %>
     </div>
