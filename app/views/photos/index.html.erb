@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <div class="container">
+      <h1>All Photo's</h1>
+      <% @photos.each do |photo| %>
+        <%= photo.name %>
+        <%= image_tag photo.image_url %>
+          <hr>
+      <% end %>
+    </div>
+  </body>
+</html>

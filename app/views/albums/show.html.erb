@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+        <div class="container-fluid">
+          <h1><%= @album.name %></h1>
+          <br>
+
+          <% @photos.each do |photo| %>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm photo">
+                <%= photo.name %> <br>
+            <div class="img-fluid">
+               <%= image_tag photo.image_url %>
+            </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+  </body>
+</html>
