@@ -28,7 +28,7 @@ class AlbumsController < ApplicationController
   private
 
   def allowed_params
-    params.require(:album).permit(:name)
+    params.require(:album).permit(:name, :description)
   end
 
 end

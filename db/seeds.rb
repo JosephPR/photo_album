@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Photo.destroy_all
 Album.destroy_all
-nature = Album.create(name: 'Nature');
-roadtrip = Album.create(name: 'Road Trip');
+nature = Album.create(name: 'Nature', album_cover: "https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?cs=srgb&dl=clouds-cloudy-conifers-247478.jpg&fm=jpg", description: 'Beautiful landscapes to warm the soul');
+roadtrip = Album.create(name: 'Road Trip', album_cover: 'https://media.cntraveler.com/photos/5727640996cb06c13a979153/master/pass/GettyImages-161842456.jpg', description: 'Amazing journey across colorado');
 
 
 Photo.create(name: "Beauty", image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shaqi_jrvej.jpg/1200px-Shaqi_jrvej.jpg", album_id: 1)

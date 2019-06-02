@@ -8,21 +8,29 @@
 
     <div class="container">
 
-        <div class="row">
-            <div class="col-4-sm">
-                <h1>Welcome to PhotoAlbums</h1>
-              <% @albums.each do |album| %>
+      <div class="row">
+        <div class="col-4-sm">
+          <h1>Welcome to PhotoAlbums</h1>
+          <% @albums.each do |album| %>
 
-                <%= link_to album.name, album_path(album) %> <br>
-              <% end %>
-              <%= link_to "create album", new_album_path, :class => 'btn btn-outline-success' %>
-              <%= link_to "add photos", new_photo_path, :class => 'btn btn-outline-warning' %>
+            <div class="card" style="width: 18rem;">
+      <%= image_tag album.album_cover,  :class => "card-img-top" %>
+              <div class="card-body">
+                <h5 class="card-title">  <%= link_to album.name, album_path(album) %></h5>
+                <p class="card-text"><%= album.description %></p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
             </div>
-        </div>
 
+
+            <br>
+          <% end %>
+          <%= link_to "create album", new_album_path, :class => 'btn btn-outline-success' %>
+          <%= link_to "add photos", new_photo_path, :class => 'btn btn-outline-warning' %>
+        </div>
+      </div>
 
     </div>
-
 
   </body>
 </html>

@@ -15,8 +15,10 @@
           <% end %>
           <h1>New Album</h1>
     <%= form_for @album do |f| %>
-    <h3> <%= f.label :name %></h3> 
+    <h3> <%= f.label :name %></h3>
       <%= f.text_field :name %>
+    <h3> <%= f.label :description %></h3> 
+      <%= f.text_field :description %>
       <%= f.submit  %>
     <% end %>
         </div>
