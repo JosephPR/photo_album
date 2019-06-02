@@ -14,8 +14,8 @@
             <div class="row">
               <div class="col-sm photo">
                 <%= photo.name %> <br>
-            <div class="img-fluid">
-               <%= image_tag photo.image_url %>
+            <div>
+               <%= image_tag photo.image_url, :class => "img-fluid"%>
             </div>
                 <% end %>
               </div>
