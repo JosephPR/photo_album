@@ -8,12 +8,14 @@
 
     <div class="container">
 
+
       <div class="row">
-        <div class="col-4-sm">
+        <div class="col-sm">
           <h1>Welcome to PhotoAlbums</h1>
+          <hr>
           <% @albums.each do |album| %>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card d-inline-block" style="width: 18rem;">
                 <%= image_tag album.album_url,  :class => "card-img-top" %>
               <div class="card-body">
                 <h5 class="card-title">  <%= link_to album.name, album_path(album) %></h5>
@@ -21,12 +23,12 @@
                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
               </div>
             </div>
-
+              <hr>
 
             <br>
           <% end %>
-
         </div>
+
       </div>
 
     </div>
