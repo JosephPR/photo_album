@@ -14,7 +14,7 @@
           <% @albums.each do |album| %>
 
             <div class="card" style="width: 18rem;">
-      <%= image_tag album.album_cover,  :class => "card-img-top" %>
+                <%= image_tag album.album_url,  :class => "card-img-top" %>
               <div class="card-body">
                 <h5 class="card-title">  <%= link_to album.name, album_path(album) %></h5>
                 <p class="card-text"><%= album.description %></p>
@@ -25,7 +25,7 @@
 
             <br>
           <% end %>
-        
+
         </div>
       </div>
 

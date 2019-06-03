@@ -16,9 +16,14 @@
                 <%= photo.name %> <br>
             <div>
                <%= image_tag photo.image_url, :class => "img-fluid"%>
+               <%= link_to "Delete Photo", photo_path(photo), method: "DELETE", :class => 'btn btn-outline-light', :style => 'color: rgb(107, 35, 25)', data: {confirm: "Are you sure?"}  %>          <hr>
+
             </div>
                 <% end %>
               </div>
+              <%= link_to 'Edit Album', edit_album_path(@album.id), :class => "btn btn-outline-light", :style => 'color: rgb(107, 35, 25)' %>
+              <br>
+              <%= link_to "Delete Album", album_path(@album.id), method: "DELETE", :class => 'btn btn-outline-light', :style => 'color: rgb(107, 35, 25)', data: {confirm: "Are you sure?"}  %>
             </div>
           </div>
 

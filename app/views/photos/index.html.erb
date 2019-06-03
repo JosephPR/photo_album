@@ -12,7 +12,8 @@
       <% @photos.each do |photo| %>
         <%= photo.name %>
         <%= image_tag photo.image_url, :class => 'img-fluid' %>
-          <hr>
+
+  <%= link_to "Delete Photo", photo_path(photo), method: "DELETE", :class => 'btn btn-outline-light', :style => 'color: rgb(107, 35, 25)', data: {confirm: "Are you sure?"}  %>          <hr>
       <% end %>
     </div>
   </body>

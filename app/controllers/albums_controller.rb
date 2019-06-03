@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
   end
 
   def create
-    @album = Album.create(allowed_params)
+    @album = Album.create(album_params)
     if @album.errors.any?
       @albums = Album.all
       render :new
@@ -24,11 +24,30 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def edit
+    @album = Album.find(params[:id])
+    # @albums = Album.all
+  end
+
+  def update
+    @album = Album.find(params[:id])
+
+    @album.update(album_params)
+    redirect_to albums_path
+  end
+
+  def destroy
+    @album = Album.find(params[:id])
+    @album.destroy
+    redirect_to albums_path
+  end
+
+
 
   private
 
-  def allowed_params
-    params.require(:album).permit(:name, :description)
+  def album_params
+    params.require(:album).permit(:name, :album_url, :description)
   end
 
 end

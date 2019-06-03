@@ -15,6 +15,25 @@ class PhotosController < ApplicationController
       redirect_to photos_path
     end
 
+    def edit
+       @photo = Photo.find(params[:id])
+    end
+
+    def update
+      @photo = Photo.find(params[:id])
+
+      @photo.update(photo_params)
+      redirect_to photos_path
+    end
+
+
+    def destroy
+      @photo = Photo.find(params[:id])
+      @photo.destroy
+      redirect_to albums_path
+
+    end
+
 
     private
 
