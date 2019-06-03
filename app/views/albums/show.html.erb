@@ -6,35 +6,34 @@
   </head>
   <body>
         <div class="container-fluid">
-          <h1><%=link_to @album.name, albums_path %></h1>
+          <div align="center">
+            <h1 align="center"><%=link_to @album.name, albums_path%></h1>
+            <%= link_to 'Edit Album', edit_album_path(@album.id), :class => "btn btn-outline-light", :style => 'color: rgb(107, 35, 25)' %>
+            <%= link_to "Delete Album", album_path(@album.id), method: "DELETE", :class => 'btn btn-outline-dark', :style => 'color: rgb(107, 35, 25)', data: {confirm: "Are you sure?"}  %>
+          </div>
           <br>
 
           <% @photos.each do |photo| %>
           <div class="container">
             <div class="row">
-              <div class="col-sm photo">
-                <%= photo.name %> <br>
+              <div class="col-sm">
+                <h3><%= photo.name %></h3> <br>
             <div>
-               <%= image_tag photo.image_url, :class => "img-fluid"%>
+
+               <%= image_tag photo.image_url, :class => "img-fluid rounded mx-auto d-block"%>
                  <%= link_to 'Edit Photo', edit_photo_path, :class => "btn btn-outline-light", :style => 'color: rgb(107, 35, 25)' %>
                <%= link_to "Delete Photo", photo_path(photo), method: "DELETE", :class => 'btn btn-outline-light', :style => 'color: rgb(107, 35, 25)', data: {confirm: "Are you sure?"}  %>          <hr>
 
             </div>
+          </div>
                 <% end %>
-              </div>
-              <div class="">
 
-                <%= link_to 'Edit Album', edit_album_path(@album.id), :class => "btn btn-outline-light", :style => 'color: rgb(107, 35, 25)' %>
-              </div>
-              <br>
-              <div class="">
 
-                <%= link_to "Delete Album", album_path(@album.id), method: "DELETE", :class => 'btn btn-outline-dark', :style => 'color: rgb(107, 35, 25)', data: {confirm: "Are you sure?"}  %>
-              </div>
+
+
             </div>
           </div>
 
         </div>
-
   </body>
 </html>
