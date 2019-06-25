@@ -1,9 +1,28 @@
-<%= form_for @photo do |f| %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Photo</title>
+  </head>
+  <body>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
-  <%= f.collection_select :album_id, @albums, :id, :name %>
-  <%= f.submit "Add Photo" %>
-<% end %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <%= form_for @photo do |f| %>
+
+          <h3>  <%= f.label :name %></h3>
+            <%= f.text_field :name %>
+            <h3><%= f.label :image_url %></h3>
+            <%= f.text_field :image_url %>
+            <br><br>
+            <%= f.collection_select :album_id, @albums, :id, :name %>
+            <br><br>
+            <%= f.submit "Add Photo", albums_path, :class => 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

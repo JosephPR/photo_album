@@ -2,36 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Albums</title>
+    <title></title>
   </head>
   <body>
 
-    <div class="container">
 
+    <div class="container-fluid" align="center">
 
-      <div class="row">
-        <div class="col-sm">
-          <h1>Welcome to PhotoAlbums</h1>
-          <hr>
-          <% @albums.each do |album| %>
+      <h1>All Photo's</h1>
+      <% @photos.each do |photo| %>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h3><%= photo.name %></h3> <br>
 
-            <div class="card d-inline-block" style="width: 18rem;">
-                <%= image_tag album.album_url,  :class => "card-img-top" %>
-              <div class="card-body">
-                <h5 class="card-title">  <%= link_to album.name, album_path(album) %></h5>
-                <p class="card-text"><%= album.description %></p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-              <hr>
-
-            <br>
-          <% end %>
+          <div>
+            <%= image_tag photo.image_url, :class => 'img-fluid' %><br>
+            <%= link_to "Delete Photo", photo_path(photo), method: "DELETE", :class => 'btn btn-outline-light', :style => 'color: rgb(107, 35, 25)', data: {confirm: "Are you sure?"}  %>          <hr>
+          </div>
         </div>
-
+        </div>
       </div>
 
+      <% end %>
     </div>
-
   </body>
 </html>

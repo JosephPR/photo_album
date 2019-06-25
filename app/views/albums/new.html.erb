@@ -2,29 +2,27 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>New Photo</title>
   </head>
   <body>
-    <div class="contianer">
+
+    <div class="container">
       <div class="row">
         <div class="col-sm">
-          <% if @album.errors%>
-            <% @album.errors.full_messages.each do |message|  %>
-              <p><%= message %></p>
-            <% end %>
+          <%= form_for @photo do |f| %>
+
+          <h3>  <%= f.label :name %></h3>
+            <%= f.text_field :name %>
+            <h3><%= f.label :image_url %></h3>
+            <%= f.text_field :image_url %>
+            <br><br>
+            <%= f.collection_select :album_id, @albums, :id, :name %>
+            <br><br>
+            <%= f.submit "Add Photo", albums_path, :class => 'btn btn-primary' %>
           <% end %>
-          <h1>New Album</h1>
-    <%= form_for @album do |f| %>
-    <h3> <%= f.label :name %></h3>
-      <%= f.text_field :name %>
-    <h3> <%= f.label :album_url %></h3>
-      <%= f.text_field :album_url %>
-    <h3> <%= f.label :description %></h3>
-      <%= f.text_field :description %>
-      <%= f.submit  %>
-    <% end %>
         </div>
       </div>
     </div>
+
   </body>
 </html>
