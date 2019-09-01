@@ -9,15 +9,11 @@
     <div class="container">
       <div class="row">
         <div class="col-sm">
-            <%= form_for @album do |f| %>
+            <%= bootstrap_form_for @album do |f| %>
 
-            <p>  <%= f.label :Name %></p>
             <%= f.text_field :name %>
-            <p><%= f.label :Cover_Photo %></p>
             <%= f.text_field :album_url %>
-            <p><%= f.label :Description %></p>
             <%= f.text_field :description %>
-            <br><br />
             <%= f.submit "Create", :class => 'btn btn-outline-primary' %>
             <% end %>
         </div>
