@@ -11,14 +11,14 @@
         <div class="col-sm">
           <%= form_for @photo do |f| %>
 
-          <h3>  <%= f.label :name %></h3>
+          <h3>  <%= f.label :Name %></h3>
             <%= f.text_field :name %>
-            <h3><%= f.label :image_url %></h3>
+            <h3><%= f.label :Image %></h3>
             <%= f.text_field :image_url %>
             <br><br>
             <%= f.collection_select :album_id, @albums, :id, :name %>
             <br><br>
-            <%= f.submit "Add Photo", albums_path, :class => 'btn btn-primary' %>
+            <%= f.submit  "Add Photo", :class => 'btn btn-outline-primary' %>
           <% end %>
         </div>
       </div>

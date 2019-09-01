@@ -23,50 +23,74 @@
  @import url('https://fonts.googleapis.com/css?family=Caveat|Hind+Guntur|Lora|Nanum+Brush+Script|PT+Serif&display=swap');
 @import "bootstrap";
 
-#name {
-  padding-top: 20px
+
+
+.card-list {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2px;
 }
 
+
+.card-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(175, 235, 233, 0.7);
+  border-radius: 30px;
+  padding: 10px;
+  cursor: grab;
+  backface-visibility: hidden;
+
+}
+
+.card-container:hover {
+  background-color: rgba(241, 247, 247, 0.62);
+}
+//
 body {
   height: 100%;
   background-image: linear-gradient(to bottom right, rgba(141, 159, 135, 0), rgba(205, 198, 165, 1));
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-a {
-  color: rgba(105, 109, 125, 1);
-}
-
-#create-album {
-  margin-right: 20px;
-}
-#create-album:hover{
-  background-color: rgba(193, 185, 137, 0.94);
-  color: rgba(251, 255, 34, 0.79);
-}
-
-#add-photos:hover {
-  background-color: rgba(111, 146, 131, 0.65);
-  color: rgba(251, 255, 34, 0.79);
-}
-
-h1, h3 {
-  font-family: 'Caveat', cursive;
-
-
-}
+//
+// a {
+//   color: rgba(105, 109, 125, 1);
+// }
+//
+// #create-album {
+//   margin-right: 20px;
+// }
+// #create-album:hover{
+//   background-color: rgba(193, 185, 137, 0.94);
+//   color: rgba(251, 255, 34, 0.79);
+// }
+//
+// #add-photos:hover {
+//   background-color: rgba(111, 146, 131, 0.65);
+//   color: rgba(251, 255, 34, 0.79);
+// }
+//
+// h1, h3 {
+//   font-family: 'Caveat', cursive;
+//
+//
+// }
+//
 
 .container {
      text-align: center;
 }
-
+//
 hr {
   width: 60%
 }
-
-#navbar {
-  background-color: rgba(111, 145, 131,0.6)!important;
-  font-family: 'Hind Guntur', sans-serif;
-     font-size: 1.5rem;
-}
+//
+// #navbar {
+//   background-color: rgba(111, 145, 131,0.6)!important;
+//   font-family: 'Hind Guntur', sans-serif;
+//      font-size: 1.5rem;
+// }

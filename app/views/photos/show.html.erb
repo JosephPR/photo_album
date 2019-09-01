@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+
+      <%=@photo.name %> <br />
+      <%= image_tag @photo.image_url %> <br />
+      <%= link_to 'Back', :back %>
+
+
+      <hr>
+
+      <%= render 'comments/comments' %>
+      <%= render 'comments/form' %>
+
+    </div>
+  </body>
+</html>
