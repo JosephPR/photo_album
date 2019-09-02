@@ -6,23 +6,27 @@
   </head>
   <body>
 
+    <h1>All Photo's</h1>
+    <div class="pic-grid">
 
-    <div class="container-fluid" align="center">
-
-      <h1>All Photo's</h1>
-      <% @photos.each do |photo| %>
       <div class="container">
         <div class="row">
           <div class="col-sm">
-            <h3><%= link_to photo.name, photo_path(photo) %></h3> <br>
 
-          <div>
-            <%= image_tag photo.image_url, :class => 'img-fluid' %><br>
-            <hr />
+            <% @photos.each do |photo| %>
+              <div class="card" style="width: 18rem;">
+                <%= image_tag photo.image_url, :class => 'card-img-top' %>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <h3><%= link_to photo.name, photo_path(photo) %></h3>
+                  </h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        </div>
-      </div>
 
       <% end %>
     </div>

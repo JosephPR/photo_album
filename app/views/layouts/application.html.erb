@@ -12,7 +12,7 @@
   <body>
     <div class="container">
   <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/albums">PhotoAlbum</a>
+    <a class="navbar-brand" href="/albums"><img src="https://icon-library.net/images/photo-album-icon-png/photo-album-icon-png-23.jpg" alt="photo-svg" class='svg' />PhotoAlbum</a>
     <ul class="navbar-nav ml-auto">
 
 
@@ -20,15 +20,15 @@
         <a class="nav-link" href="/photos">All photos</a>
       </li>
       <li class="nav-item active">
-        <%= link_to "create album", new_album_path, :class => 'btn', :id => 'create-album' %>
+        <%= link_to "create album", new_album_path, :class => 'nav-link btn', :id => 'create-album' %>
 
       </li>
       <li class="nav-item active">
-        <%= link_to "add photos", new_photo_path, :class => 'btn', :id => 'add-photos' %>
+        <%= link_to "add photos", new_photo_path, :class => 'nav-link btn', :id => 'add-photos' %>
       </li>
 
-      <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+      <li class="dropdown nav-link">
+    <a href="#" class="dropdown-toggle profile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
     <ul class="dropdown-menu">
       <% if user_signed_in? %>
       <li><%= link_to "Edit profile", edit_user_registration_path %></li>

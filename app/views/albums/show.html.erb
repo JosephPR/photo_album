@@ -5,25 +5,32 @@
     <title></title>
   </head>
   <body>
-        <div class="container-fluid">
-          <div align="center">
-            <h1 align="center"><%=link_to @album.name, albums_path%></h1>
-            <%= link_to 'Edit Album', edit_album_path(@album.id), :class => "btn btn-outline-info" %>
-            <%= link_to "Delete Album", album_path(@album.id), method: "DELETE", :class => 'btn btn-outline-primary', data: {confirm: "Are you sure?"}  %>
-          </div>
-          <br>
-            <div class="card-list">
-              <% @photos.each do |photo| %>
-              <div class="card-container">
-                <%= link_to photo.name, photo_path(photo) %>
-                <%= image_tag photo.image_url, :class => "img-fluid rounded mx-auto d-block"%>
-                <%= link_to 'Edit Photo', edit_photo_path, :class => "btn btn-outline-info" %>
-                <%= link_to "Delete Photo", photo_path(photo), method: "DELETE", :class => 'btn btn-outline-primary', data: {confirm: "Are you sure?"}  %>          <hr>
-                </div><br>
+    <div class="container-fluid">
+      <div align="center">
+        <h1 align="center"><%=link_to @album.name, albums_path%></h1>
+        <%= link_to 'Edit Album', edit_album_path(@album.id), :class => "btn btn-outline-info" %>
+        <%= link_to "Delete Album", album_path(@album.id), method: "DELETE", :class => 'btn btn-outline-primary', data: {confirm: "Are you sure?"} %>
+      </div>
+      <br>
 
-               <% end %>
-               <div>
+            <div class="container">
+        <div class="row">
+
+                  <% @photos.each do |photo| %>
+                    <div class="card col-6">
+                      <%= image_tag photo.image_url, :class => "card-img-top"%>
+                      <div class="card-body">
+                        <h5 class="card-title"><%= link_to photo.name, photo_path(photo) %></h5>
+                        <%= link_to 'Edit Photo', edit_photo_path, :class => "btn btn-outline-info" %>
+                        <%= link_to "Delete Photo", photo_path(photo), method: "DELETE", :class => 'btn btn-outline-primary', data: {confirm: "Are you sure?"} %>
+                      </div>
+                    </div>
+                  <% end %>
         </div>
+      </div>
+
+
+    </div>
 
   </body>
 </html>

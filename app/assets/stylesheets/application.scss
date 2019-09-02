@@ -25,7 +25,32 @@
 /*
  *= require rails_bootstrap_forms
  */
+.sign-up {
+  margin-left: 40%;
+}
 
+#navbar {
+  background-color: rgba(40, 92, 249, 0.11)!important;
+  border-radius: 10px;
+}
+
+.nav-link:hover {
+  color: rgb(25, 177, 122)!important;
+}
+
+ .profile {
+   color: black;
+ }
+
+ .svg {
+   width: 20%
+ }
+
+#album-img {
+  border-radius: 200px;
+  padding: 5px;
+
+}
 
 .card-list {
   width: 85vw;

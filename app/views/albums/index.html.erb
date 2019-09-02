@@ -9,7 +9,7 @@
 
     <div class="container-fluid" align="center">
 
-      <h1>All Album's</h1>
+      <h1>Album's</h1>
       <% @albums.each do |album| %>
       <div class="container">
         <div class="row">
@@ -18,7 +18,7 @@
             <h5><%= album.description %></h5> <br>
 
           <div>
-            <%= image_tag album.album_url, :class => 'img-fluid' %><br>
+            <%= image_tag album.album_url, :class => 'img-fluid', :id => 'album-img' %><br>
             <%= link_to "Delete Album", album_path(album), method: "DELETE", :class => 'btn btn-outline-light', data: {confirm: "Are you sure?"}  %>          <hr>
           </div>
         </div>
