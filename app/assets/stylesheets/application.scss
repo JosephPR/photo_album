@@ -25,6 +25,11 @@
 /*
  *= require rails_bootstrap_forms
  */
+.photo-img {
+  max-height: 100%;
+   max-width: 100%;
+}
+
 .sign-up {
   margin-left: 40%;
 }
